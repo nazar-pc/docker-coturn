@@ -5,7 +5,7 @@ A Docker container with the [Coturn TURN server](https://github.com/coturn/cotur
 # Build the container
 
 ```
-sudo docker build -t zolochevska/turn-server .
+sudo docker build -t sudo docker .
 ```
 
 # Run the container
@@ -18,13 +18,7 @@ sudo docker run \
   -p 65435-65535:65435-65535/udp \
   --restart=always \
   --name coturn \
-  zolochevska/turn-server
-```
-
-Look into the log:
-
-```
-sudo docker logs coturn
+  boldt/coturn
 ```
 
 ## Environment variables
@@ -55,13 +49,7 @@ sudo docker run \
   -e MAX_PORT=${MAX_PORT} \
   --restart=always \
   --name coturn \
-  zolochevska/turn-server
-```
-
-Look into the log:
-
-```
-sudo docker logs coturn
+  boldt/coturn
 ```
 
 ## Certificates
@@ -78,5 +66,12 @@ sudo docker run \
   --volume /opt/pkey.pem:/etc/ssl/turn_server_pkey.pem \
   --restart=always \
   --name coturn \
-  zolochevska/turn-server
+  boldt/coturn
+```
+
+## Debugging
+
+```
+sudo docker logs coturn
+sudo docker exec -it coturn /bin/bash
 ```
