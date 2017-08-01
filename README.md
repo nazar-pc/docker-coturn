@@ -2,6 +2,9 @@
 
 A Docker container with the [Coturn TURN server](https://github.com/coturn/coturn).
 
+* Github Repo: [boldt/turn-server-docker-image](https://github.com/boldt/turn-server-docker-image)
+* Based on [anastasiia-zolochevska/turn-server-docker-image](https://github.com/anastasiia-zolochevska/turn-server-docker-image)
+
 # Build the container
 
 ```

@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Anastasia Zolochevska <anastasiia.zolochevska@gmail.com>
+MAINTAINER Dennis Boldt <info@dennis-boldt.de>
 
 # Set the working directory to /app
 WORKDIR /app
