@@ -2,8 +2,8 @@
 
 A Docker container with the [Coturn TURN server](https://github.com/coturn/coturn).
 
-* Github Repo: [boldt/turn-server-docker-image](https://github.com/boldt/turn-server-docker-image)
-* Based on [anastasiia-zolochevska/turn-server-docker-image](https://github.com/anastasiia-zolochevska/turn-server-docker-image)
+* hub.docker.com (Docker image): [boldt/coturn] (https://hub.docker.com/r/boldt/coturn/)
+* github.com (Repo): [boldt/turn-server-docker-image](https://github.com/boldt/turn-server-docker-image)
 
 # Build the container
 
@@ -78,3 +78,7 @@ sudo docker run \
 sudo docker logs coturn
 sudo docker exec -it coturn /bin/bash
 ```
+
+# Thanks
+
+The initial image of this image was created by [anastasiia-zolochevska/turn-server-docker-image](https://github.com/anastasiia-zolochevska/turn-server-docker-image)
