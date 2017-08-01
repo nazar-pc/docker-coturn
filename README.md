@@ -5,7 +5,7 @@ A Docker container with the [Coturn TURN server](https://github.com/coturn/cotur
 # Build the container
 
 ```
-sudo docker build -t sudo docker .
+sudo docker build -t boldt/coturn .
 ```
 
 # Run the container
