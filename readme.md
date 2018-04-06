@@ -1,18 +1,7 @@
-# Docker image for TURN server
+# Coturn
+[Coturn](https://github.com/coturn/coturn) TURN server as Docker image
 
-A Docker container with the [Coturn TURN server](https://github.com/coturn/coturn).
-
-* hub.docker.com (Docker image): [boldt/coturn](https://hub.docker.com/r/boldt/coturn/)
-* github.com (Repo): [boldt/turn-server-docker-image](https://github.com/boldt/turn-server-docker-image)
-
-# Build the container
-
-```
-sudo docker build -t boldt/coturn .
-```
-
-# Run the container
-
+# How to use
 ```
 sudo docker run \
   -d \
@@ -21,11 +10,10 @@ sudo docker run \
   -p 65435-65535:65435-65535/udp \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  nazarpc/coturn
 ```
 
 ## Environment variables
-
 This image supports some environment variables:
 
 * `USERNAME`: Username needed for turn. Defaults to `username`
@@ -40,7 +28,7 @@ An example:
 # This makes sure, that the min- and max-port is the same for all environment variables
 export MIN_PORT=50000
 export MAX_PORT=50010
-sudo docker run \
+docker run \
   -d \
   -p 3478:3478 \
   -p 3478:3478/udp \
@@ -52,11 +40,10 @@ sudo docker run \
   -e MAX_PORT=${MAX_PORT} \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  nazarpc/coturn
 ```
 
 ## Certificates
-
 Store the cert under `/opt/cert.pem` and the key under `/opt/pkey.pem` and mount them as volumes:
 
 ```
@@ -65,20 +52,24 @@ sudo docker run \
   -p 3478:3478 \
   -p 3478:3478/udp \
   -p 65435-65535:65435-65535/udp \
-  --volume /opt/cert.pem:/etc/ssl/turn_server_cert.pem \
-  --volume /opt/pkey.pem:/etc/ssl/turn_server_pkey.pem \
+  -v /opt/cert.pem:/etc/ssl/turn_server_cert.pem \
+  -v /opt/pkey.pem:/etc/ssl/turn_server_pkey.pem \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  nazarpc/coturn
 ```
 
-## Debugging
+# Acknowledgments
+Initially images was created by Anastasia Zolochevska: https://github.com/anastasiia-zolochevska/turn-server-docker-image
 
-```
-sudo docker logs coturn
-sudo docker exec -it coturn /bin/bash
-```
+Then it was improved by Dennis Boldt: https://github.com/boldt/turn-server-docker-image
 
-# Thanks
+## Contribution
+Feel free to create issues and send pull requests (for big changes create an issue first and link it from the PR), they are highly appreciated!
 
-The initial image of this image was created by [anastasiia-zolochevska/turn-server-docker-image](https://github.com/anastasiia-zolochevska/turn-server-docker-image)
+## License
+Free Public License 1.0.0 / Zero Clause BSD License
+
+https://opensource.org/licenses/FPL-1.0.0
+
+https://tldrlegal.com/license/bsd-0-clause-license
