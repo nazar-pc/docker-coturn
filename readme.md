@@ -20,6 +20,8 @@ This image supports some environment variables:
 * `USERNAME`: Username needed for turn. Defaults to `username`
 * `PASSWORD`: Password needed for turn. Defaults ro `password`
 * `REALM`: Realm needed for turn. Defaults to `realm`
+* `LISTEN_PORT`: Defaults to 3478
+* `TLS_LISTEN_PORT`: Defaults to 5349
 * `MIN_PORT`: This defines the min-port for the range used by turn. Defaults to `65435`
 * `MAX_PORT`: This defines the max-port for the range used by turn. Defaults to `65535`
 
