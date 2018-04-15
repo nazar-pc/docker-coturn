@@ -16,6 +16,7 @@ sudo docker run \
 ## Environment variables
 This image supports some environment variables:
 
+* `ANONYMOUS`: When set to `1`, will accept anonymous requests and will not use username and password
 * `USERNAME`: Username needed for turn. Defaults to `username`
 * `PASSWORD`: Password needed for turn. Defaults ro `password`
 * `REALM`: Realm needed for turn. Defaults to `realm`

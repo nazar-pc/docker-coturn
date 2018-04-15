@@ -4,12 +4,12 @@ LABEL maintainer="Nazar Mokrynskyi <nazar@mokrynskyi.com>"
 EXPOSE 3478/tcp
 EXPOSE 3478/udp
 
+ENV ANONYMOUS=0
 ENV USERNAME=username
 ENV PASSWORD=password
 ENV REALM=realm
 ENV MIN_PORT=65435
 ENV MAX_PORT=65535
-ENV ANONYMOUS=0
 
 RUN \
 	apt-get update && \
