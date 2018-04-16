@@ -16,7 +16,7 @@ ENV MAX_PORT=65535
 RUN \
 	apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install -y dnsutils coturn && \
+	apt-get install -y coturn dnsutils iproute2 && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
