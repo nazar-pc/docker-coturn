@@ -1,4 +1,4 @@
-FROM buildpack-deps
+FROM buildpack-deps:18.04
 LABEL maintainer="Nazar Mokrynskyi <nazar@mokrynskyi.com>"
 
 EXPOSE 3478/tcp
